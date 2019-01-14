@@ -1,0 +1,6 @@
+framework module Pods_Uber_Clone_Swift4_With_Firebase {
+  umbrella header "Pods-Uber Clone Swift4 With Firebase-umbrella.h"
+
+  export *
+  module * { export * }
+}
