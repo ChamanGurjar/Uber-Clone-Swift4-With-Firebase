@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		675B130421ECF61600532870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B130321ECF61600532870 /* AppDelegate.swift */; };
-		675B130621ECF61600532870 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B130521ECF61600532870 /* ViewController.swift */; };
+		675B130621ECF61600532870 /* LoginSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B130521ECF61600532870 /* LoginSignUpViewController.swift */; };
 		675B130921ECF61600532870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 675B130721ECF61600532870 /* Main.storyboard */; };
 		675B130B21ECF61700532870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 675B130A21ECF61700532870 /* Assets.xcassets */; };
 		675B130E21ECF61700532870 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 675B130C21ECF61700532870 /* LaunchScreen.storyboard */; };
-		675B131621ECF77400532870 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 675B131521ECF77400532870 /* GoogleService-Info.plist */; };
+		675B131821ECFFED00532870 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 675B131721ECFFED00532870 /* GoogleService-Info.plist */; };
 		7B4499D4C5D4D1B99B72C450 /* Pods_Uber_Clone_Swift4_With_Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BBF5377058AE0B5FDAA2FD /* Pods_Uber_Clone_Swift4_With_Firebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +20,12 @@
 		46D3F0041D39A32DEFFDE0AF /* Pods-Uber Clone Swift4 With Firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uber Clone Swift4 With Firebase.release.xcconfig"; path = "Target Support Files/Pods-Uber Clone Swift4 With Firebase/Pods-Uber Clone Swift4 With Firebase.release.xcconfig"; sourceTree = "<group>"; };
 		675B130021ECF61600532870 /* Uber Clone Swift4 With Firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Uber Clone Swift4 With Firebase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B130321ECF61600532870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		675B130521ECF61600532870 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		675B130521ECF61600532870 /* LoginSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpViewController.swift; sourceTree = "<group>"; };
 		675B130821ECF61600532870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		675B130A21ECF61700532870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		675B130D21ECF61700532870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		675B130F21ECF61700532870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		675B131521ECF77400532870 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		675B131721ECFFED00532870 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78BBF5377058AE0B5FDAA2FD /* Pods_Uber_Clone_Swift4_With_Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uber_Clone_Swift4_With_Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70A3C4462F92BD7B376AEB8 /* Pods-Uber Clone Swift4 With Firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uber Clone Swift4 With Firebase.debug.xcconfig"; path = "Target Support Files/Pods-Uber Clone Swift4 With Firebase/Pods-Uber Clone Swift4 With Firebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,12 +64,12 @@
 			isa = PBXGroup;
 			children = (
 				675B130321ECF61600532870 /* AppDelegate.swift */,
-				675B130521ECF61600532870 /* ViewController.swift */,
+				675B130521ECF61600532870 /* LoginSignUpViewController.swift */,
 				675B130721ECF61600532870 /* Main.storyboard */,
 				675B130A21ECF61700532870 /* Assets.xcassets */,
 				675B130C21ECF61700532870 /* LaunchScreen.storyboard */,
 				675B130F21ECF61700532870 /* Info.plist */,
-				675B131521ECF77400532870 /* GoogleService-Info.plist */,
+				675B131721ECFFED00532870 /* GoogleService-Info.plist */,
 			);
 			path = "Uber Clone Swift4 With Firebase";
 			sourceTree = "<group>";
@@ -80,7 +80,6 @@
 				D70A3C4462F92BD7B376AEB8 /* Pods-Uber Clone Swift4 With Firebase.debug.xcconfig */,
 				46D3F0041D39A32DEFFDE0AF /* Pods-Uber Clone Swift4 With Firebase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,7 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				675B130E21ECF61700532870 /* LaunchScreen.storyboard in Resources */,
-				675B131621ECF77400532870 /* GoogleService-Info.plist in Resources */,
+				675B131821ECFFED00532870 /* GoogleService-Info.plist in Resources */,
 				675B130B21ECF61700532870 /* Assets.xcassets in Resources */,
 				675B130921ECF61600532870 /* Main.storyboard in Resources */,
 			);
@@ -171,6 +170,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Uber Clone Swift4 With Firebase/Pods-Uber Clone Swift4 With Firebase-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -178,6 +178,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -215,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				675B130621ECF61600532870 /* ViewController.swift in Sources */,
+				675B130621ECF61600532870 /* LoginSignUpViewController.swift in Sources */,
 				675B130421ECF61600532870 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,7 +371,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gurjar.chaman.Uber-Clone-Swift4-With-Firebase";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gurjar.chaman.Uber-Clone-Swift4-Firebase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,7 +390,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gurjar.chaman.Uber-Clone-Swift4-With-Firebase";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gurjar.chaman.Uber-Clone-Swift4-Firebase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
