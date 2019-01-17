@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67021B6F21F0E1A700C7A55D /* DriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67021B6E21F0E1A700C7A55D /* DriverTableViewController.swift */; };
 		675B130421ECF61600532870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B130321ECF61600532870 /* AppDelegate.swift */; };
 		675B130621ECF61600532870 /* LoginSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B130521ECF61600532870 /* LoginSignUpViewController.swift */; };
 		675B130921ECF61600532870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 675B130721ECF61600532870 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		46D3F0041D39A32DEFFDE0AF /* Pods-Uber Clone Swift4 With Firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uber Clone Swift4 With Firebase.release.xcconfig"; path = "Target Support Files/Pods-Uber Clone Swift4 With Firebase/Pods-Uber Clone Swift4 With Firebase.release.xcconfig"; sourceTree = "<group>"; };
+		67021B6E21F0E1A700C7A55D /* DriverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTableViewController.swift; sourceTree = "<group>"; };
 		675B130021ECF61600532870 /* Uber Clone Swift4 With Firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Uber Clone Swift4 With Firebase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		675B130321ECF61600532870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		675B130521ECF61600532870 /* LoginSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				675B130321ECF61600532870 /* AppDelegate.swift */,
 				675B130521ECF61600532870 /* LoginSignUpViewController.swift */,
 				676CA27E21F045F000327855 /* RiderViewController.swift */,
+				67021B6E21F0E1A700C7A55D /* DriverTableViewController.swift */,
 				675B130721ECF61600532870 /* Main.storyboard */,
 				675B130A21ECF61700532870 /* Assets.xcassets */,
 				675B130C21ECF61700532870 /* LaunchScreen.storyboard */,
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				675B130621ECF61600532870 /* LoginSignUpViewController.swift in Sources */,
+				67021B6F21F0E1A700C7A55D /* DriverTableViewController.swift in Sources */,
 				676CA27F21F045F000327855 /* RiderViewController.swift in Sources */,
 				675B130421ECF61600532870 /* AppDelegate.swift in Sources */,
 			);

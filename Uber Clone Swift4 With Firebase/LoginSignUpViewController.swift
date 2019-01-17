@@ -50,8 +50,18 @@ class LoginSignUpViewController: UIViewController {
                 if error != nil {
                     self.displayAlert(title: "Error", message: error!.localizedDescription)
                 } else {
-                    print("SignUp Successful \(result?.user)")
-                    self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                    print("SignUp Successful \(result?.user.displayName)")
+                    if self.riderDriverMode.isOn {
+                        let request = Auth.auth().currentUser?.createProfileChangeRequest()
+                        request?.displayName = "Driver"
+                        request?.commitChanges(completion: nil)
+                        self.performSegue(withIdentifier: "driverSegue", sender: nil)
+                    } else {
+                        let request = Auth.auth().currentUser?.createProfileChangeRequest()
+                        request?.displayName = "Rider"
+                        request?.commitChanges(completion: nil)
+                        self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                    }
                 }
             }
         }
@@ -63,8 +73,13 @@ class LoginSignUpViewController: UIViewController {
                 if error != nil {
                     self.displayAlert(title: "Error", message: error!.localizedDescription)
                 } else {
-                    print("Login Successful \(result?.user)")
-                    self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                    print("Login Successful \(result?.user.displayName)")
+                    if result?.user.displayName == "Driver" {
+                        self.performSegue(withIdentifier: "driverSegue", sender: nil)
+                    } else {
+                        self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                    }
+                    
                 }
             }
         }
