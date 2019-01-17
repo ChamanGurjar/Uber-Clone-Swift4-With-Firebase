@@ -27,6 +27,16 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
             self.rideRequests.append(snapshot)
             self.tableView.reloadData()
         }
+        
+        updateLocationDistance()
+    }
+    
+    /* This method will update Driver and Rider distance detaiks
+     */
+    private func updateLocationDistance() {
+        Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { (timer) in
+            self.tableView.reloadData()
+        }
     }
     
     private func setupLocationManager() {
