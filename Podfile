@@ -7,6 +7,7 @@ target 'Uber Clone Swift4 With Firebase' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
 
   # Pods for Uber Clone Swift4 With Firebase
 
