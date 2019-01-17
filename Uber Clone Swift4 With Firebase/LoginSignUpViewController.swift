@@ -51,6 +51,7 @@ class LoginSignUpViewController: UIViewController {
                     self.displayAlert(title: "Error", message: error!.localizedDescription)
                 } else {
                     print("SignUp Successful \(result?.user)")
+                    self.performSegue(withIdentifier: "riderSegue", sender: nil)
                 }
             }
         }
@@ -63,6 +64,7 @@ class LoginSignUpViewController: UIViewController {
                     self.displayAlert(title: "Error", message: error!.localizedDescription)
                 } else {
                     print("Login Successful \(result?.user)")
+                    self.performSegue(withIdentifier: "riderSegue", sender: nil)
                 }
             }
         }
