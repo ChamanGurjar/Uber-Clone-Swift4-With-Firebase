@@ -68,9 +68,7 @@ extension DriverTableViewController {
         return rideRequests.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "rideRequestCell", for: indexPath)
-        
+    private func configureCell(_ indexPath: IndexPath, _ cell: UITableViewCell) {
         let snapshot = rideRequests[indexPath.row]
         if let rideRequestDetails = snapshot.value as? [String: AnyObject] {
             if let email = rideRequestDetails["email"] as? String {
@@ -79,15 +77,19 @@ extension DriverTableViewController {
                     let riderLocaiton = CLLocation(latitude: lat, longitude: long)
                     let driverCLLocation = CLLocation(latitude: driverLocation.latitude, longitude: driverLocation.longitude)
                     let distance = driverCLLocation.distance(from: riderLocaiton) / 1000
-                    let roundedDistance = round(distance * 100) / 100 
+                    let roundedDistance = round(distance * 100) / 100
                     
                     cell.textLabel?.text = "\(email) - \(roundedDistance) KM Away!"
                 }
-                
-                
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rideRequestCell", for: indexPath)
+        configureCell(indexPath, cell)
         return cell
     }
+    
     
 }
