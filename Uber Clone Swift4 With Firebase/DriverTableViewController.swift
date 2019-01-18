@@ -91,5 +91,26 @@ extension DriverTableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let snapshot = rideRequests[indexPath.row]
+        performSegue(withIdentifier: "acceptRequestSegue", sender: snapshot)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let acceptRequestVC = segue.destination as? AcceptRequestViewController {
+            
+            if let snapshot = sender as? DataSnapshot {
+                
+                if let rideRequestDetails = snapshot.value as? [String: AnyObject] {
+                    if let email = rideRequestDetails["email"] as? String, let lat = rideRequestDetails["lat"] as? Double, let long = rideRequestDetails["long"] as? Double  {
+                        let riderLocaiton = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                        acceptRequestVC.requesterEmail = email
+                        acceptRequestVC.requestLocation = riderLocaiton
+                    }
+                }
+            }
+            
+        }
+    }
     
 }

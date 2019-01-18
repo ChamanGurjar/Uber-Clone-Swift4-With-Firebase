@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1M6-q9-nPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="27"/>
+            <point key="canvasLocation" x="2105" y="27"/>
         </scene>
         <!--Driver Table View Controller-->
         <scene sceneID="3Sa-lg-YaU">
@@ -197,10 +197,54 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="GHW-Ph-bFR" kind="show" identifier="acceptRequestSegue" id="s8R-bc-Uz4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFp-gL-Fh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1308" y="772"/>
+        </scene>
+        <!--Accept Request View Controller-->
+        <scene sceneID="SOu-Je-cqQ">
+            <objects>
+                <viewController id="GHW-Ph-bFR" customClass="AcceptRequestViewController" customModule="Uber_Clone_Swift4_With_Firebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SyN-CO-eq5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-bx-BOP">
+                                <rect key="frame" x="20" y="84" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="30Y-bx-BOP" secondAttribute="height" multiplier="1:1" id="a5T-Fy-eje"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dM-Ww-fpa">
+                                <rect key="frame" x="103" y="440" width="169" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Accept Ride Request"/>
+                                <connections>
+                                    <action selector="acceptRideRequest:" destination="GHW-Ph-bFR" eventType="touchUpInside" id="ke8-ZB-B4u"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3dM-Ww-fpa" firstAttribute="centerX" secondItem="SyN-CO-eq5" secondAttribute="centerX" id="8L9-vE-eob"/>
+                            <constraint firstItem="30Y-bx-BOP" firstAttribute="leading" secondItem="A6f-pt-8dt" secondAttribute="leading" constant="20" id="CaJ-uH-V8C"/>
+                            <constraint firstItem="3dM-Ww-fpa" firstAttribute="top" secondItem="30Y-bx-BOP" secondAttribute="bottom" constant="21" id="V43-CL-GnQ"/>
+                            <constraint firstItem="30Y-bx-BOP" firstAttribute="top" secondItem="A6f-pt-8dt" secondAttribute="top" constant="20" id="b0M-zI-ARf"/>
+                            <constraint firstItem="A6f-pt-8dt" firstAttribute="trailing" secondItem="30Y-bx-BOP" secondAttribute="trailing" constant="20" id="ckt-hL-SMn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A6f-pt-8dt"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="30Y-bx-BOP" id="b2W-mS-r7j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwC-Qu-vqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2104.8000000000002" y="770.46476761619192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CJe-zZ-flG">
