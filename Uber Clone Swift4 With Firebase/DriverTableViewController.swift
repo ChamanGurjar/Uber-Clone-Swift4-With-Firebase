@@ -106,6 +106,7 @@ extension DriverTableViewController {
                         let riderLocaiton = CLLocationCoordinate2D(latitude: lat, longitude: long)
                         acceptRequestVC.requesterEmail = email
                         acceptRequestVC.requestLocation = riderLocaiton
+                        acceptRequestVC.driverLocation = self.driverLocation
                     }
                 }
             }
