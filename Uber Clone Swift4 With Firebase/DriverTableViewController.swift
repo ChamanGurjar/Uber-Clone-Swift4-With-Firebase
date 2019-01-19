@@ -24,8 +24,13 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
         setupLocationManager()
         
         Database.database().reference().child(DriverTableViewController.RIDER_TABLE_NAME).observe(DataEventType.childAdded) { (snapshot) in
-            self.rideRequests.append(snapshot)
-            self.tableView.reloadData()
+            if let rideRequestDetails = snapshot.value as? [String: AnyObject],  let _ = rideRequestDetails["driverLat"] as? Double {
+                
+            } else {
+                self.rideRequests.append(snapshot)
+                self.tableView.reloadData()
+            }
+            
         }
         
         updateLocationDistance()
