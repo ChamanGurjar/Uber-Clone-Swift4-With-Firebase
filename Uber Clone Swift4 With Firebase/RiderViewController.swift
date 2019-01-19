@@ -61,6 +61,23 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
         let roundedDistance = round(distance * 100) / 100
         
         callAnUberButton.setTitle("Your driver is \(roundedDistance) - KM away!", for: .normal)
+        
+        let latDelta = abs(driverLocation.latitude - userLocation.latitude) * 2 + 0.005
+        let lonDelta = abs(driverLocation.longitude - userLocation.longitude) * 2 + 0.005
+        let region = MKCoordinateRegion(center: userLocation, span: MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta))
+        riderMapView.setRegion(region, animated: true)
+        
+        riderMapView.removeAnnotations(riderMapView.annotations)
+        
+        let riderAnnotation = MKPointAnnotation()
+        riderAnnotation.coordinate = userLocation
+        riderAnnotation.title = "You are here Buddy!"
+        riderMapView.addAnnotation(riderAnnotation)
+        
+        let driverAnnotation = MKPointAnnotation()
+        driverAnnotation.coordinate = driverLocation
+        driverAnnotation.title = "Your Driver!"
+        riderMapView.addAnnotation(driverAnnotation)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -71,10 +88,15 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
         if let coordinate = manager.location?.coordinate {
             let center = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
             userLocation = center
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-            riderMapView.setRegion(region, animated: true)
             
-            addAnotation(center)
+            if isDriverOnTheWay {
+                displayDriverAndRider()
+            } else {
+                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+                riderMapView.setRegion(region, animated: true)
+                
+                addAnotation(center)
+            }
         }
     }
     
@@ -104,12 +126,12 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
         let riderDetails: [String: Any] = ["email": email, "lat": userLocation.latitude, "long": userLocation.longitude]
         Database.database().reference().child(RiderViewController.RIDER_TABLE_NAME).childByAutoId().setValue(riderDetails)
         isUberBooked = true
-        callAnUberButton.setTitle("  Cancel Uber  ", for: .normal)
+        callAnUberButton.setTitle("Cancel Uber", for: .normal)
     }
     
     private func cancelAnUber(_ email: String) {
         isUberBooked = false
-        callAnUberButton.setTitle("  Call An Uber  ", for: .normal)
+        callAnUberButton.setTitle("Call An Uber", for: .normal)
         
         let dbRefrence: DatabaseReference = Database.database().reference().child(RiderViewController.RIDER_TABLE_NAME)
         dbRefrence.queryOrdered(byChild: "email").queryEqual(toValue: email).observe(.childAdded) { (snapshot) in
