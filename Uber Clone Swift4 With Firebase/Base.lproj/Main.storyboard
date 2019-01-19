@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="driver@yopmail.com" borderStyle="roundedRect" placeholder="Your Email Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G78-mg-KN5">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rider1@yopmail.com" borderStyle="roundedRect" placeholder="Your Email Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G78-mg-KN5">
                                 <rect key="frame" x="20" y="77" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -131,10 +131,10 @@
                                 </constraints>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlg-qz-4jE">
-                                <rect key="frame" x="136.5" y="444" width="102" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.52309004190232833" blue="0.0012503010419571137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="129.5" y="444" width="116" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="  Call An Uber  ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.031873018420000003" green="0.10316978559999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="callUber:" destination="Gcg-bH-P6V" eventType="touchUpInside" id="ypt-Eu-cgv"/>

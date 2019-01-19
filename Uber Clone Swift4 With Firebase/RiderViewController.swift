@@ -19,6 +19,8 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
     
     private var locationManager = CLLocationManager()
     private var userLocation = CLLocationCoordinate2D()
+    private var driverLocation = CLLocationCoordinate2D()
+    private var isDriverOnTheWay = false
     private var isUberBooked = false
     
     override func viewDidLoad() {
@@ -42,8 +44,23 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
                 self.isUberBooked = true
                 self.callAnUberButton.setTitle("  Cancel Uber ", for: .normal)
                 dbRefrence.removeAllObservers()
+                
+                if let rideRequestDetails = snapshot.value as? [String: AnyObject], let lat = rideRequestDetails["driverLat"] as? Double, let long = rideRequestDetails["driverLong"] as? Double  {
+                    self.driverLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                    self.isDriverOnTheWay = true
+                    self.displayDriverAndRider()
+                }
             }
         }
+    }
+    
+    private func displayDriverAndRider() {
+        let driverCLLocation = CLLocation(latitude: driverLocation.latitude, longitude: driverLocation.longitude)
+        let riderCLLocation = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+        let distance = driverCLLocation.distance(from: riderCLLocation) / 1000
+        let roundedDistance = round(distance * 100) / 100
+        
+        callAnUberButton.setTitle("Your driver is \(roundedDistance) - KM away!", for: .normal)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -70,6 +87,9 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func callUber (_ sender: UIButton) {
+        if isDriverOnTheWay {
+            return
+        }
         if let email = Auth.auth().currentUser?.email {
             if isUberBooked {
                 cancelAnUber(email)
