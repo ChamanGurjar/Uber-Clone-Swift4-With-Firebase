@@ -49,6 +49,16 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
                     self.driverLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
                     self.isDriverOnTheWay = true
                     self.displayDriverAndRider()
+                    
+                    dbRefrence.queryOrdered(byChild: "email").queryEqual(toValue: email).observe(.childChanged, with: { (snapshot) in
+                        if let rideRequestDetails = snapshot.value as? [String: AnyObject], let lat = rideRequestDetails["driverLat"] as? Double, let long = rideRequestDetails["driverLong"] as? Double  {
+                            self.driverLocation = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                            self.isDriverOnTheWay = true
+                            self.displayDriverAndRider()
+                            dbRefrence.removeAllObservers()
+                        }
+                    })
+                    
                 }
             }
         }
